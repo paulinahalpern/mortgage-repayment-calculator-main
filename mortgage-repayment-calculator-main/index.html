@@ -21,27 +21,27 @@
         <label for ="mortgage-amount"> Mortgage Amount </label>
         <div class="mortgage-input-amount">
         <span class="currency-symbol">&#163;</span>
-        <input type="text" id="mortgage-amount" name="mortgage-amount">   
+        <input type="number" id="mortgage-amount" name="mortgage-amount">   
         </div>
         <label for ="mortgage-term"> Mortgage Term </label>
         <div class="mortgage-input-term">
           <span class="currency-symbol">years</span>
-        <input type="text" id="mortgage-term" name="mortgage-term">
+        <input type="number" id="mortgage-term" name="mortgage-term">
       </div>
         <label for ="interest-rate"> Interest Rate </label>
         <div class="mortgage-input-int-rate">
           <span class="currency-symbol">%</span>
-        <input type="text" id="interest-rate" name="interest-rate">
+        <input type="number" id="interest-rate" name="interest-rate">
       </div>
       </form>
       <div class="mortgage-type-container">
       <h3 for="mortgage-type"> Mortgage Type </h3>
       <div class="repayment-container">
-        <input type="checkbox" value="repayment"> 
+        <input type="checkbox" value="repayment" id="repayment"> 
         <label for="repayment">Repayment</label>
       </div>
       <div class="interest-only-container">
-        <input type="checkbox" value="interest-only"> 
+        <input type="checkbox" value="interest-only" id="interest-only"> 
         <label for="interest-only">Interest Only</label>
       </div>
       </div>
@@ -59,6 +59,7 @@
       <p>  Your results are shown below based on the information you provided. 
         To adjust the results, edit the form and click “calculate repayments” again.</p>
         <div class="monthly">Your monthly repayments</div>
+        <div>Value</div>
         <div class="amount-to-repay"> Total you'll repay over the term </div>
     </div>
   </div>

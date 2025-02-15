@@ -63,6 +63,7 @@ body{
         height:100%;
         background-color: lightblue;
         font-weight: 800;
+        padding: auto;
     }
     .mortgage-input-term .currency-symbol{
     right:0;
@@ -70,6 +71,7 @@ body{
     .mortgage-type-container input label{
         display:flex;
     }
+
     .repayment-container, .interest-only-container{
         border: 1px solid black;
         padding: 2vh;
