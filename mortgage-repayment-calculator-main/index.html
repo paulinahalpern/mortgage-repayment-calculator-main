@@ -5,57 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Frontend Mentor | Mortgage repayment calculator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Mortgage Calculator
-  Clear All
-
-  Mortgage Amount
-
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="mortgage-calculator">
+    <header>
+    <h1>  Mortgage Calculator </h1>
+    <button class="btn-clear">  Clear All </button>
+    </header>
+    <section class="mortgage-user-details">
+      <form>
+        <label for ="mortgage-amount"> Mortgage Amount </label>
+        <div class="mortgage-input-amount">
+        <span class="currency-symbol">&#163;</span>
+        <input type="text" id="mortgage-amount" name="mortgage-amount">   
+        </div>
+        <label for ="mortgage-term"> Mortgage Term </label>
+        <div class="mortgage-input-term">
+          <span class="currency-symbol">years</span>
+        <input type="text" id="mortgage-term" name="mortgage-term">
+      </div>
+        <label for ="interest-rate"> Interest Rate </label>
+        <div class="mortgage-input-int-rate">
+          <span class="currency-symbol">%</span>
+        <input type="text" id="interest-rate" name="interest-rate">
+      </div>
+      </form>
+      <div class="mortgage-type-container">
+      <h3 for="mortgage-type"> Mortgage Type </h3>
+      <div class="repayment-container">
+        <input type="checkbox" value="repayment"> 
+        <label for="repayment">Repayment</label>
+      </div>
+      <div class="interest-only-container">
+        <input type="checkbox" value="interest-only"> 
+        <label for="interest-only">Interest Only</label>
+      </div>
+      </div>
+      <button class="calculate-btn"> Calculate Repayments </button>
+    </section>
   </div>
+  <div class="result">
+    <div class="empty-result-page">
+      <h2> Results shown here</h2>
+      <p> Complete the form and click “calculate repayments” to see what 
+      your monthly repayments would be.</p>
+    </div>
+    <div class="complete-result-page">
+      <h2>  Your results </h2>
+      <p>  Your results are shown below based on the information you provided. 
+        To adjust the results, edit the form and click “calculate repayments” again.</p>
+        <div class="monthly">Your monthly repayments</div>
+        <div class="amount-to-repay"> Total you'll repay over the term </div>
+    </div>
+  </div>
+
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Paulina</a>.
+  </footer> -->
+  <script src="index.js"></script>
 </body>
 </html>

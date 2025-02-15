@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    
+}
+
+body{
+    background-color: azure;
+    margin: 2vh;
+    font-family: "Trirong", serif;
+}
+
+.mortgage-calculator{
+    background-color: white;
+}
+.empty-result-page{
+    background-color: #72A0C1;
+    color:white;
+}
+.complete-result-page{
+    display: none;
+}
+.btn-clear{
+    border: none;
+    background: none;
+    border-bottom: 2px solid black;
+    font-weight: 300;
+}
+
+
+/* MOBILE version 375px*/
+@media screen and (max-device-width: 375px) {
+    .mortgage-calculator{
+        margin:1vh;
+    }
+    h1, h3{
+        padding: 1vh 1vh 0 1vh;
+        font-weight: 800;
+    }
+    .btn-clear{
+        margin-bottom:3vh;
+    }
+    #mortgage-amount, #mortgage-term, #interest-rate{
+        width:100%;
+        height:5vh;
+    }
+    
+    .mortgage-input-amount, .mortgage-input-term , .mortgage-input-int-rate{
+        position: relative;
+    }
+    .mortgage-input-amount .currency-symbol,
+    .mortgage-input-term .currency-symbol,
+    .mortgage-input-int-rate .currency-symbol
+    {
+        position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        width:50px;
+        height:100%;
+        background-color: lightblue;
+        font-weight: 800;
+    }
+    .mortgage-input-term .currency-symbol{
+    right:0;
+    }
+    .mortgage-type-container input label{
+        display:flex;
+    }
+    .repayment-container, .interest-only-container{
+        border: 1px solid black;
+        padding: 2vh;
+        margin-bottom:3vh;
+    }
+    .calculate-btn{
+        width:80%;
+        background-color:yellowgreen;
+        height:5vh;
+        margin: 0 auto;   
+        display: block;
+        margin-bottom:2vh;
+        font-size:1rem;
+        font-weight: 600;
+    }
+    
+
+}
+
+
+
