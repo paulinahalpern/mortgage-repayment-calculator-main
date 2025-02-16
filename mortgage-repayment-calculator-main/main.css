@@ -3,33 +3,206 @@
     box-sizing: border-box;
 }
 
-html{
-    
-}
 
 body{
     background-color: azure;
-    margin: 2vh;
+    margin: 0;
     font-family: "Trirong", serif;
+    height: 100%;
+}
+
+.result{
+    width:50%;
+    background-color: #72A0C1;
+    height: 60vh;
+    margin:2vh;
+    border-radius: 10%;
+}
+
+.empty-result-page{
+    color:white;
+    align-items: center;
+    padding: 4vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.empty-result-page p{
+    text-align: center;
+    padding: 2vh;
+}
+
+.empty-result-image{
+    padding: 2vh;
+}
+h2{
+    color:white;
+}
+.complete-result-page{
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+.complete-result-page p{
+    font-size: 1rem;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    color:white;
+    width: 80%;
 }
 
 .mortgage-calculator{
     background-color: white;
 }
-.empty-result-page{
-    background-color: #72A0C1;
+
+.summary{
+    border: 1px solid black;
+    border-top: 2px solid yellowgreen;
+    background-color: #314757;
     color:white;
+    border-radius: 10px;
+    height:20vh;
+    width:50%;
 }
-.complete-result-page{
-    display: none;
+
+.monthly{
+    font-size: 1rem;
 }
+#repayment-value{
+    font-size: 2rem;
+    color: yellowgreen;
+}
+
+#repayment-value:before,#amount-to-repay:before{
+    content:"\00A3\20";
+}
+
+
+.repay{
+    font-size: 1rem;
+}
+
+
 .btn-clear{
     border: none;
     background: none;
     border-bottom: 2px solid black;
     font-weight: 300;
 }
+.hidden{
+    display:none
+}
 
+.complete-result-page{
+    display: none;
+}
+
+.complete-result-page.active{
+    display: block;
+}
+
+#mortgage-amount, #mortgage-term, #interest-rate{
+    width:100%;
+    height:5vh;
+    padding-left: 55px;
+}
+#mortgage-term{
+    padding-left: 2px;
+}
+
+.mortgage-input-amount, .mortgage-input-term , .mortgage-input-int-rate{
+    position: relative;
+}
+.mortgage-input-amount .currency-symbol,
+.mortgage-input-term .currency-symbol,
+.mortgage-input-int-rate .currency-symbol
+{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:50px;
+    height:100%;
+    background-color: lightblue;
+    font-weight: 800;
+    padding: auto;
+}
+.mortgage-input-term .currency-symbol{
+right:0;
+}
+.mortgage-type-container input label{
+    display:flex;
+}
+
+.calculate-btn{
+    width:80%;
+    background-color:#317873;
+    color:white;
+    height:5vh;
+    margin: 0 auto;   
+    display: block;
+    margin-bottom:2vh;
+    font-size:1rem;
+    font-weight: 600;
+    letter-spacing: 0.5vh;
+    cursor: pointer;
+    margin-top: 1vh;
+    border-radius: 10px;
+}
+
+.calculate-btn:hover{
+    background-color: #72A0C1;
+}
+
+#repayment, #interest-only {
+cursor: pointer;
+}
+
+
+
+.mortgage-calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 1vh;
+   
+}
+
+.btn-clear{
+    cursor: pointer;
+}
+
+.mortgage-user-details{
+    width: 50%;
+}
+
+
+/* Error messages */
+.error1, .error2, .error3{
+    color:red;
+}
+
+.repayment-container, .interest-only-container {
+    border: 1px solid #317873;
+    padding:1.5vh;
+    margin:1vh;
+}
+
+
+/* Hover states */
+
+.repayment-container:hover, .interest-only-container:hover{
+border: 1px solid yellow;
+}
 
 /* MOBILE version 375px*/
 @media screen and (max-device-width: 375px) {
@@ -41,53 +214,33 @@ body{
         font-weight: 800;
     }
     .btn-clear{
-        margin-bottom:3vh;
+        text-align: left;
+        width:30%;
     }
-    #mortgage-amount, #mortgage-term, #interest-rate{
-        width:100%;
-        height:5vh;
-    }
-    
-    .mortgage-input-amount, .mortgage-input-term , .mortgage-input-int-rate{
-        position: relative;
-    }
-    .mortgage-input-amount .currency-symbol,
-    .mortgage-input-term .currency-symbol,
-    .mortgage-input-int-rate .currency-symbol
-    {
-        position:absolute;
-        display: flex;
-        align-items: center;
-        justify-content:center;
-        width:50px;
-        height:100%;
-        background-color: lightblue;
-        font-weight: 800;
-        padding: auto;
-    }
-    .mortgage-input-term .currency-symbol{
-    right:0;
-    }
-    .mortgage-type-container input label{
-        display:flex;
-    }
-
     .repayment-container, .interest-only-container{
         border: 1px solid black;
         padding: 2vh;
         margin-bottom:3vh;
-    }
-    .calculate-btn{
-        width:80%;
-        background-color:yellowgreen;
-        height:5vh;
-        margin: 0 auto;   
-        display: block;
-        margin-bottom:2vh;
-        font-size:1rem;
-        font-weight: 600;
+    } 
+    .mortgage-calculator{
+        display: flex;
+        flex-direction: column;
     }
     
+    .mortgage-user-details{
+        width:fit-content
+    }
+    .result{
+        width:100%;
+        height: 100%;
+    }
+    .complete-result-page p{
+        font-size: 1rem;
+    }
+    .summary{
+        height: fit-content;
+        padding: 2vh;
+    }
 
 }
 

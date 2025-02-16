@@ -12,44 +12,52 @@
 </head>
 <body>
   <div class="mortgage-calculator">
-    <header>
-    <h1>  Mortgage Calculator </h1>
-    <button class="btn-clear">  Clear All </button>
-    </header>
-    <section class="mortgage-user-details">
-      <form>
-        <label for ="mortgage-amount"> Mortgage Amount </label>
+    <div class="mortgage-user-details">
+      <div class="top-nav">
+      <h1> Mortgage Calculator </h1>
+      </div>
+      <form id="mortgage-form">
+        <div>
+        <button type="reset" class="btn-clear">  Clear All </button>
+      </div>
+        <label for ="mortgage-amount"> Mortgage Amount <span class="error1"></span> </label>
         <div class="mortgage-input-amount">
         <span class="currency-symbol">&#163;</span>
         <input type="number" id="mortgage-amount" name="mortgage-amount">   
         </div>
-        <label for ="mortgage-term"> Mortgage Term </label>
+        <label for ="mortgage-term"> Mortgage Term <span class="error2"></span> </label>
+        
         <div class="mortgage-input-term">
           <span class="currency-symbol">years</span>
         <input type="number" id="mortgage-term" name="mortgage-term">
       </div>
-        <label for ="interest-rate"> Interest Rate </label>
+        <label for ="interest-rate"> Interest Rate <span class="error3"></span> </label>
         <div class="mortgage-input-int-rate">
           <span class="currency-symbol">%</span>
         <input type="number" id="interest-rate" name="interest-rate">
       </div>
       </form>
+      <form>
+      <fieldset>
       <div class="mortgage-type-container">
-      <h3 for="mortgage-type"> Mortgage Type </h3>
+      <legend for="mortgage-type"> Mortgage Type</legend>
       <div class="repayment-container">
-        <input type="checkbox" value="repayment" id="repayment"> 
+        <input type="radio" id="repayment" name="mortgage" value="repayment"checked>  
         <label for="repayment">Repayment</label>
-      </div>
-      <div class="interest-only-container">
-        <input type="checkbox" value="interest-only" id="interest-only"> 
+       </div> 
+       <div class="interest-only-container">
+        <input type="radio" id="interest-only" value="interest-only" name="mortgage" > 
         <label for="interest-only">Interest Only</label>
       </div>
       </div>
+    </fieldset>
+  </form>
       <button class="calculate-btn"> Calculate Repayments </button>
     </section>
   </div>
   <div class="result">
     <div class="empty-result-page">
+      <img src="assets/images/illustration-empty.svg" alt="Counting Kit" class="empty-result-image">
       <h2> Results shown here</h2>
       <p> Complete the form and click “calculate repayments” to see what 
       your monthly repayments would be.</p>
@@ -58,16 +66,14 @@
       <h2>  Your results </h2>
       <p>  Your results are shown below based on the information you provided. 
         To adjust the results, edit the form and click “calculate repayments” again.</p>
+        <div class="summary">
         <div class="monthly">Your monthly repayments</div>
-        <div>Value</div>
-        <div class="amount-to-repay"> Total you'll repay over the term </div>
-    </div>
+        <div id="repayment-value"></div>
+        <div class="repay">Total you'll repay over the term</div>
+        <div id="amount-to-repay"></div>
+      </div>
+      </div>
   </div>
-
-  <!-- <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Paulina</a>.
-  </footer> -->
   <script src="index.js"></script>
 </body>
 </html>
