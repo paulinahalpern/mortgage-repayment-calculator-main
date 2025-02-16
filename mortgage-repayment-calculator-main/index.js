@@ -1,4 +1,5 @@
 const submitButton= document.querySelector(".calculate-btn");
+const clearBtn= document.querySelector("btn-clear");
 
 
 submitButton.addEventListener("click", mortgageCalculator);
@@ -54,5 +55,3 @@ emptyResult.classList.toggle("hidden")
 activeResult.classList.toggle("active")
 }
 }
-
-
