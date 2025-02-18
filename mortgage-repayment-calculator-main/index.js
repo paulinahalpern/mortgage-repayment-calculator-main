@@ -1,8 +1,9 @@
 const submitButton= document.querySelector(".calculate-btn");
-const clearBtn= document.querySelector("btn-clear");
+const clearBtn= document.querySelector(".btn-clear");
 
 
 submitButton.addEventListener("click", mortgageCalculator);
+clearBtn.addEventListener("click",clearButton)
 
 function mortgageCalculator(){
 const mortgageAmount= document.querySelector("#mortgage-amount").value;
@@ -53,5 +54,14 @@ totalAmountRepay.innerHTML = parseFloat(totalToRepay).toFixed(2);
 
 emptyResult.classList.toggle("hidden")
 activeResult.classList.toggle("active")
+
 }
 }
+
+// Clear button
+
+function clearButton(){
+    document.querySelector(".empty-result-page").classList.remove("hidden");
+    document.querySelector(".complete-result-page").classList.remove("active");
+}
+
